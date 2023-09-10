@@ -3,6 +3,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0px 50px;
   background-color: #232c35;
+
+  transition: background 0.2s linear;
 }
 
 #button-dark-mode {
@@ -19,11 +21,6 @@ body {
   /* text-decoration: none; */
   color: black;
 }
-
-/* .container {
-    color: black;
-    background-color: #bbb;
-} */
 
 a {
   color: white;
@@ -76,10 +73,6 @@ nav ul {
   align-items: center;
   padding: 6px;
 }
-/* 
-nav a {
-  color: black;
-} */
 
 nav a:hover {
   color: green;
@@ -119,7 +112,7 @@ nav a:hover {
 }
 
 .dark-mode-input:checked~.slider {
-  background: green;
+  background: rgb(26, 155, 26);
 }
 
 .dark-mode-input:checked~.slider>.button {
@@ -128,11 +121,7 @@ nav a:hover {
 }
 
 .fa-sun {
-  color: #f39c12;
-  /* width: 15px;
-  height: 15px;
-  top: 4px;
-  left: 4px; */
+  color: #af6c00;
 }
 
 .fa-moon {
