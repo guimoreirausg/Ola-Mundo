@@ -15,3 +15,32 @@ const main = (numberOfPins, existingPins, lenPin = 4) => {
 }
 
 main(2, [1111, 2222], 2) 
+
+const verifyIfExists = (currentPin, existingPins) => existingPins.some((item) => item === currentPin)
+
+const generatePin = (defaultPin, existingPins, lenPin) => {
+  const generated = true
+  while (generated) {
+    const newPin = Math.ceil(Math.random(defaultPin) * lenPin)
+    // const newPin = 3190
+    console.log('Generated', newPin)
+    const minimum = Math.pow(10, 3)
+    const maximum = Math.pow(10, lenPin) - 1
+    const isExistent = verifyIfExists(newPin, existingPins)
+    if (newPin >= minimum && newPin <= maximum && !isExistent) {
+      return newPin
+    }
+  }
+}
+
+const app = (numberOfPins, existingPins, lenPin = 4) => {
+  let defaultPin = lenPin < 4 || lenPin > 9 ? 4 : lenPin
+
+  for (let i = 0; i < numberOfPins; i++) {
+    const newPin = generatePin(defaultPin, existingPins, lenPin)
+    existingPins.push(newPin)
+    // console.log(newPin)
+  }
+}
+
+app(2, [3190], 7)
